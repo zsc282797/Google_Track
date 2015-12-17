@@ -1,0 +1,2 @@
+var buf = new Buffer;
+
