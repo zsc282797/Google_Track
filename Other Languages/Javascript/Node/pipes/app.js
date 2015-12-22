@@ -4,7 +4,7 @@ var zlib = require('zlib');
 var readable = fs.createReadStream(__dirname + '/greet.txt');
 var writable = fs.createWriteStream(__dirname + '/greetcpy.txt');
 
-var compressed = fs.createWriteStrea(__dirname + '/greet.txt.gz');
+var compressed = fs.createWriteStream(__dirname + '/greet.txt.gz');
 
 var gzip = zlib.createGzip();
 
