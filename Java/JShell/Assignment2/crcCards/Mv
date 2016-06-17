@@ -1,0 +1,11 @@
+Class name: Mv
+Parent class (if any): Command
+Subclasses (if any): N/A
+
+Responsibilities:
+*Move files 
+
+Collaborators:
+*FileSystem
+*Directory
+*Files

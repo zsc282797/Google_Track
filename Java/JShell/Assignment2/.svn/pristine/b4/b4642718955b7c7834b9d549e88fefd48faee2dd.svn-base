@@ -1,0 +1,12 @@
+Class name: Popd
+Parent class (if any): Command
+Subclasses (if any): N/A
+
+Responsibilities:
+*Remove the top entry of the directory stack and change current working
+directory to it.
+*Print error message if directory stack si empty.
+
+Collaborators:
+*Cd
+*FileSystem

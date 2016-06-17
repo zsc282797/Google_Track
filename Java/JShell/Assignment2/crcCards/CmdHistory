@@ -1,0 +1,10 @@
+Class name: CmdHistory
+Parent class (if any): N/A
+Subclasses (if any): N/A
+
+Responsibilities:
+*Store, add and get all the user inputs from the initiation to the termination
+of the program.
+
+Collaborators:
+*N/A

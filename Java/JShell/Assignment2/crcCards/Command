@@ -1,0 +1,10 @@
+Class name: Command
+Parent class (if any): N/A
+Subclasses (if any): CAT, CD, ECHO, HISTORY, LS, MAN, MKDIR, POPD, PUSHD, PWD
+
+Responsibilities:
+*Store, set and get command name, command parameters and command documentation.
+*Set common behaviors for command subclasses.
+
+Collaborators:
+*FileSystem

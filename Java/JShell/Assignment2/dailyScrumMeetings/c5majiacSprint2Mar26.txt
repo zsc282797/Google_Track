@@ -1,0 +1,8 @@
+a) What did I work on last time?
+	- finished the recallhistort class and its test
+b) What do I plan to work on now?
+	- nope, i have finished all my part according to the sprint backlog assignments
+	
+
+c) Am I blocked on anything?
+	- NA

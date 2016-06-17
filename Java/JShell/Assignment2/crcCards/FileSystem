@@ -1,0 +1,11 @@
+Class name: FileSystem
+Parent class (if any): N/A
+Subclasses (if any): N/A
+
+Responsibilities:
+*Keeps track of existing directories, command history and directory stack.
+
+Collaborators:
+*Directory
+*CmdHistory
+*DirStack

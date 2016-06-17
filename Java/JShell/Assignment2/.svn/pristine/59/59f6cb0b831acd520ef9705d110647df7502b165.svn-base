@@ -1,0 +1,12 @@
+Class name: Cd
+Parent class (if any): Command
+Subclasses (if any): N/A
+
+Responsibilities:
+*Change to another directory either following a relative or full path.
+*Display error message if target does not exist.
+
+Collaborators:
+*File
+*FileSystem
+*Directory

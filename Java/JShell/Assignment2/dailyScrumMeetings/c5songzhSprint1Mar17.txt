@@ -1,0 +1,10 @@
+a) What did I work on last time?
+	- Used my code as base for 2B 
+	- Fixed bugs that I found not discovered before 
+
+b) What do I plan to work on now?
+	- Finish implementation of the assigned function CP,MV
+	
+
+c) Am I blocked on anything?
+	- NA

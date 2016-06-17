@@ -1,0 +1,10 @@
+a) What did I work on last time?
+	- Discuss whose code/design in the 2A to use as base.
+	- Think about how to construct the new requirement of 2B
+
+b) What do I plan to work on now?
+	- Coding.
+	
+
+c) Am I blocked on anything?
+	- NA

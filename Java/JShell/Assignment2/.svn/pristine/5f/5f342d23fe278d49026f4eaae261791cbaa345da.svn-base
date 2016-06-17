@@ -1,0 +1,54 @@
+|----------------------------------------------------|-------------------------|
+|			User Stories / Features					 |	Estimated Time (days)  |
+|----------------------------------------------------|-------------------------|
+|Having the ability to quit the program.			 |           1			   |
+|----------------------------------------------------|-------------------------|
+|Can create directories using relative path to the   |			 3			   |
+|current location or full path.						 |						   |
+|----------------------------------------------------|-------------------------|
+|Being able to freely changing directories, either	 |			 			   |
+|using relative path to the current location or full | 			 3			   |
+|path, having a few abbreviations would be handy.	 |						   |
+|----------------------------------------------------|-------------------------|
+|Being able to know what files and directories are in|			 2			   |
+|a location, either current or any other locations.  |  					   |
+|----------------------------------------------------|-------------------------|
+|Being able to know my current working directory.	 |		     1			   |
+|----------------------------------------------------|-------------------------|
+|Being able to freely navigate the directories with  |						   |
+|the ability to revert and ultimately go back to the |			 4			   |
+|starting location.					    			 |						   |
+|----------------------------------------------------|-------------------------|
+|Having the ability to see the history of commands	 |						   |
+|that have been inputed, and the ability to control  |           2			   |
+|how far back to see.								 |                         |
+|----------------------------------------------------|-------------------------|
+|Able to see/display the content of one file or		 |			 1			   |
+|multiple files.								     |						   |
+|----------------------------------------------------|-------------------------|
+|Being able to create a file with content.		 	 |			 1	           |
+|----------------------------------------------------|-------------------------|
+|Being able to replace contents inside an existing   |			 1			   |
+|file with new contents.							 |						   |
+|----------------------------------------------------|-------------------------|
+|Being able to add content into an existing file	 |		     1			   |
+|----------------------------------------------------|-------------------------|
+|Being able to list files and sub directory          |						   |
+|of a directory in a normal way or recursive way     |           1			   |
+|——————————————————————————————————————————---------—|————————————————---------|
+|Being able to move a file from one directory        |                         |
+|to another                                          |           1             |
+|—————————————————————————————————-------------------|————-----------—————————-|
+|Being able to retrieve a file from a web addres                               |
+|s in url form                                       |           2             |
+|————————————————------------------------------------|---------------——————————|
+|Being able to recall and execute a command given    |                         |
+|an history number                                   |           2             |
+|—————-------------------------------------——————————|—————————————------——————|
+|Being able to find a certain word pattern [Regax]   |                         |
+|and print the path to the file and the line which   |                         |
+|contains the pattern                                |           3             |
+|———————————---------------------------------------——|—--------————————————————|
+|Being able to display multiple files and display    |                         |
+|error message if exists                             |           1             |
+|----------------------------------------------------|-------------------------|

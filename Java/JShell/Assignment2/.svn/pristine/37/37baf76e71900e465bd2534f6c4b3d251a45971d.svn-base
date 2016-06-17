@@ -1,0 +1,13 @@
+Class name: JShell
+Parent class (if any): N/A
+Subclasses (if any): N/A
+
+Responsibilities:
+*Initialize, maintain and terminate user interface.
+*Take in, validate and run user commands.
+*Print error message if input invalid.
+
+Collaborators:
+*Command
+*FileSystem
+*CmdHistory

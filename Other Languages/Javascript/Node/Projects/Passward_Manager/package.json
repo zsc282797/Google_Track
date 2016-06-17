@@ -1,0 +1,26 @@
+{
+  "name": "passward_manager",
+  "version": "1.0.0",
+  "description": "This is a project for fun ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zsc282797/Google_Track.git"
+  },
+  "keywords": [
+    "Passward"
+  ],
+  "author": "Zhancheng Song",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zsc282797/Google_Track/issues"
+  },
+  "homepage": "https://github.com/zsc282797/Google_Track#readme",
+  "dependencies": {
+    "node-persist": "0.0.6"
+  }
+}

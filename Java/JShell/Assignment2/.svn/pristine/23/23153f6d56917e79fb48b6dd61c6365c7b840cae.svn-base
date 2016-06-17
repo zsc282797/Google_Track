@@ -1,0 +1,11 @@
+Class name: Directory
+Parent class (if any): N/A
+Subclasses (if any): File
+
+Responsibilities:
+*Store, set and get directory name.
+*Store, set and get parent directory.
+*Store, set, add and get child directories and files.
+
+Collaborators:
+*N/A

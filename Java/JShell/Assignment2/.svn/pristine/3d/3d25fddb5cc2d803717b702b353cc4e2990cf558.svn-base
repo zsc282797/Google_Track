@@ -1,0 +1,11 @@
+Class name: Mkdir
+Parent class (if any): Command
+Subclasses (if any): N/A
+
+Responsibilities:
+*Create directories, each of which may be relative to the current directory or
+may be a full path.
+
+Collaborators:
+*FileSystem
+*Directory

@@ -1,0 +1,8 @@
+Class name: JShellException
+Parent class (if any): Exception
+Subclasses (if any): N/A
+
+Responsibilities:
+*Handle errors from command classes 
+
+Collaborators:

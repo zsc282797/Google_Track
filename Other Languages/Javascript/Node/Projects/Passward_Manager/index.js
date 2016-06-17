@@ -1,0 +1,1 @@
+console.log("Passward Manager is running");

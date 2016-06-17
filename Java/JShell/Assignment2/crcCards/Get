@@ -1,0 +1,10 @@
+Class name: Get
+Parent class (if any): Command
+Subclasses (if any): N/A
+
+Responsibilities:
+*Get files from a URL 
+
+Collaborators:
+* File 
+* FileSystem 

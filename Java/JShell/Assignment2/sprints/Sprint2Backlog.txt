@@ -1,0 +1,44 @@
+Sprint 1 Backlog.  
+Mar 11 to Mar 18 
+
+
+User Stories from Product Backlog that we will address in this sprint:
+a) Being able to list files and sub directory of a directory in a normal way or recursive way
+b) Being able to move a file from one directory to another
+c) Being able to retrieve a file from a web address in url form 
+d) Being able to recall and execute a command given an history number
+e) Being able to find a certain word pattern [REGEX] and print the path to the file and the line which contains the pattern
+f) Being able to display the contents of multiple files ignoring invalid paths
+g) Displaying appropriate error messages  
+
+
+Specific tasks to be accomplished:
+a-1. (Ls) Add recursive functionality to ls
+a-2. (Ls) Write JUnit tests for new functionality 
+b-1. (Mv) Write code to move files 
+b-2. (Cp) Write code to copy file 
+b-3. (Mv) Write JUnit tests for mv
+c-1. (Get) Research possible methods to retrieve files from a URL 
+c-2. (Get) Write basic code to retrieve files from a URL 
+c-3. (Get) Write JUnit tests for Get 
+d-1. (History) Write code to execute a command from history 
+d-2. (History) Write JUnit tests for !
+e-1. (File) Edit code for files to contain lines 
+e-2. (Grep) Write code to scan files for a regex 
+e-3. (Grep) Write JUnit tests for Grep 
+f-1. (Cat) Write JUnit tests for Cat 
+g-1. (Exception) Write generic exception class 
+
+User: Sam 
+Tasks: c-1, c-2, c-3, e-1, e-2, e-3 
+
+User: Alie
+Tasks: a-1, a-2
+
+User: Jackson
+Tasks: d-1, d-2
+
+User: Mike 
+Tasks: b-1, b-2, b-3, g-1
+
+

@@ -1,0 +1,10 @@
+Class name: Cp
+Parent class (if any): Command
+Subclasses (if any): N/A
+
+Responsibilities:
+*Copy files 
+
+Collaborators:
+* File 
+* FileSystem 

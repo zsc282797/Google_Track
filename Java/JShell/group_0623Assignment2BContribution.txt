@@ -1,0 +1,664 @@
++++ASSIGNMENT2 TEAM MEMBER CONTRIBUTION+++
+
+
+
+PART 1) +++SVN CHECKOUT ON YOUR ASSIGNMENT1+++
+A    Assignment2/.settings
+A    Assignment2/.settings/org.eclipse.jdt.core.prefs
+A    Assignment2/.classpath
+A    Assignment2/sprints
+A    Assignment2/sprints/readMeSprints.txt
+A    Assignment2/sprints/Sprint1Backlog.txt
+A    Assignment2/sprints/Sprint2Backlog.txt
+A    Assignment2/productBacklog
+A    Assignment2/productBacklog/productBacklogFor2A.txt
+A    Assignment2/productBacklog/readMeProductBacklog.txt
+A    Assignment2/.project
+A    Assignment2/crcCards
+A    Assignment2/crcCards/DirStack
+A    Assignment2/crcCards/Directory
+A    Assignment2/crcCards/Mkdir
+A    Assignment2/crcCards/Cat
+A    Assignment2/crcCards/Man
+A    Assignment2/crcCards/crcCards Checklist
+A    Assignment2/crcCards/Command
+A    Assignment2/crcCards/Echo
+A    Assignment2/crcCards/Ls
+A    Assignment2/crcCards/File
+A    Assignment2/crcCards/Get
+A    Assignment2/crcCards/JShell
+A    Assignment2/crcCards/Mv
+A    Assignment2/crcCards/Pushd
+A    Assignment2/crcCards/RecallHistory
+A    Assignment2/crcCards/FileSystem
+A    Assignment2/crcCards/CmdHistory
+A    Assignment2/crcCards/Cd
+A    Assignment2/crcCards/readMeForCrcCards.txt
+A    Assignment2/crcCards/Pwd
+A    Assignment2/crcCards/Grep
+A    Assignment2/crcCards/JShellException
+A    Assignment2/crcCards/History
+A    Assignment2/crcCards/Cp 
+A    Assignment2/crcCards/Popd
+A    Assignment2/readMeAssignment2A.txt
+A    Assignment2/src
+A    Assignment2/src/test
+A    Assignment2/src/test/GetTest.java
+A    Assignment2/src/test/CpTest.java
+A    Assignment2/src/test/MvTest.java
+A    Assignment2/src/test/PopdTest.java
+A    Assignment2/src/test/PushdTest.java
+A    Assignment2/src/test/RecallHistoryTest.java
+A    Assignment2/src/test/CdTest.java
+A    Assignment2/src/test/MkdirTest.java
+A    Assignment2/src/test/CatTest.java
+A    Assignment2/src/test/PwdTest.java
+A    Assignment2/src/test/ManTest.java
+A    Assignment2/src/test/GrepTest.java
+A    Assignment2/src/test/EchoTest.java
+A    Assignment2/src/test/LsTest.java
+A    Assignment2/src/driver
+A    Assignment2/src/driver/framework
+A    Assignment2/src/driver/framework/DirStack.java
+A    Assignment2/src/driver/framework/Directory.java
+A    Assignment2/src/driver/framework/FileSystem.java
+A    Assignment2/src/driver/framework/CmdHistory.java
+A    Assignment2/src/driver/framework/File.java
+A    Assignment2/src/driver/command
+A    Assignment2/src/driver/command/History.java
+A    Assignment2/src/driver/command/Cp.java
+A    Assignment2/src/driver/command/Popd.java
+A    Assignment2/src/driver/command/Mkdir.java
+A    Assignment2/src/driver/command/Cat.java
+A    Assignment2/src/driver/command/Man.java
+A    Assignment2/src/driver/command/Command.java
+A    Assignment2/src/driver/command/Echo.java
+A    Assignment2/src/driver/command/Ls.java
+A    Assignment2/src/driver/command/Get.java
+A    Assignment2/src/driver/command/Mv.java
+A    Assignment2/src/driver/command/Pushd.java
+A    Assignment2/src/driver/command/RecallHistory.java
+A    Assignment2/src/driver/command/Cd.java
+A    Assignment2/src/driver/command/Pwd.java
+A    Assignment2/src/driver/command/Grep.java
+A    Assignment2/src/driver/Exceptions
+A    Assignment2/src/driver/Exceptions/JShellException.java
+A    Assignment2/src/driver/JShell.java
+A    Assignment2/dailyScrumMeetings
+A    Assignment2/dailyScrumMeetings/c5majiacSprint2Mar20.txt
+A    Assignment2/dailyScrumMeetings/c5majiacSprint1Mar14.txt
+A    Assignment2/dailyScrumMeetings/c5majiacSprint2Mar23.txt
+A    Assignment2/dailyScrumMeetings/c5majiacSprint1Mar17.txt
+A    Assignment2/dailyScrumMeetings/c5majiacSprint2Mar26.txt
+A    Assignment2/dailyScrumMeetings/c4teachmSprint2Mar20.txt
+A    Assignment2/dailyScrumMeetings/c4teachmSprint1Mar14.txt
+A    Assignment2/dailyScrumMeetings/c4teachmSprint2Mar23.txt
+A    Assignment2/dailyScrumMeetings/c4teachmSprint1Mar17.txt
+A    Assignment2/dailyScrumMeetings/c5muisesSprint2Mar20.txt
+A    Assignment2/dailyScrumMeetings/Sprint1Backlog.txt
+A    Assignment2/dailyScrumMeetings/c5muisesSprint1Mar14.txt
+A    Assignment2/dailyScrumMeetings/c5muisesSprint2Mar23.txt
+A    Assignment2/dailyScrumMeetings/readMeDailyScrumMeetings.txt
+A    Assignment2/dailyScrumMeetings/c5songzhSprint2Mar22.txt
+A    Assignment2/dailyScrumMeetings/c5muisesSprint1Mar17.txt
+A    Assignment2/dailyScrumMeetings/c5songzhSprint1Mar14.txt
+A    Assignment2/dailyScrumMeetings/c5songzhSprint1Mar17.txt
+Checked out revision 125.
+
+
+
+PART 2) +++SVN COMMIT LOGS ARE+++
+Marks Deductions here (-.5 max): 
+------------------------------------------------------------------------
+r125 | c5songzh | 2016-03-26 23:58:41 -0400 (Sat, 26 Mar 2016) | 1 line
+
+nice lookng code
+------------------------------------------------------------------------
+r124 | c5songzh | 2016-03-26 23:57:59 -0400 (Sat, 26 Mar 2016) | 1 line
+
+Formate
+------------------------------------------------------------------------
+r123 | c5songzh | 2016-03-26 23:57:29 -0400 (Sat, 26 Mar 2016) | 1 line
+
+Final revision
+------------------------------------------------------------------------
+r122 | c5songzh | 2016-03-26 23:57:00 -0400 (Sat, 26 Mar 2016) | 1 line
+
+Final revision
+------------------------------------------------------------------------
+r121 | c5muises | 2016-03-26 23:56:20 -0400 (Sat, 26 Mar 2016) | 1 line
+
+added one more test case to grep test
+------------------------------------------------------------------------
+r120 | c4teachm | 2016-03-26 23:54:30 -0400 (Sat, 26 Mar 2016) | 1 line
+
+
+------------------------------------------------------------------------
+r119 | c4teachm | 2016-03-26 23:51:27 -0400 (Sat, 26 Mar 2016) | 1 line
+
+
+------------------------------------------------------------------------
+r118 | c5muises | 2016-03-26 23:51:12 -0400 (Sat, 26 Mar 2016) | 1 line
+
+adding grep test
+------------------------------------------------------------------------
+r117 | c4teachm | 2016-03-26 23:47:33 -0400 (Sat, 26 Mar 2016) | 2 lines
+
+
+
+------------------------------------------------------------------------
+r116 | c4teachm | 2016-03-26 23:47:24 -0400 (Sat, 26 Mar 2016) | 2 lines
+
+
+
+------------------------------------------------------------------------
+r115 | c5muises | 2016-03-26 23:47:17 -0400 (Sat, 26 Mar 2016) | 1 line
+
+deleted mvtest.java
+------------------------------------------------------------------------
+r114 | c5songzh | 2016-03-26 23:46:41 -0400 (Sat, 26 Mar 2016) | 1 line
+
+Fixed printing bug
+------------------------------------------------------------------------
+r113 | c5muises | 2016-03-26 23:40:59 -0400 (Sat, 26 Mar 2016) | 1 line
+
+fixed error on test get
+------------------------------------------------------------------------
+r112 | c4teachm | 2016-03-26 23:35:45 -0400 (Sat, 26 Mar 2016) | 1 line
+
+Committing updated crcCards
+------------------------------------------------------------------------
+r111 | c5muises | 2016-03-26 23:35:27 -0400 (Sat, 26 Mar 2016) | 1 line
+
+"adding get test"
+------------------------------------------------------------------------
+r110 | c5songzh | 2016-03-26 23:25:02 -0400 (Sat, 26 Mar 2016) | 1 line
+
+Fixed little bugs
+------------------------------------------------------------------------
+r109 | c5songzh | 2016-03-26 23:24:47 -0400 (Sat, 26 Mar 2016) | 1 line
+
+wrote helper methods for Grep command
+------------------------------------------------------------------------
+r108 | c5songzh | 2016-03-26 23:24:07 -0400 (Sat, 26 Mar 2016) | 1 line
+
+wrote a last minute fix for the command and it is working
+------------------------------------------------------------------------
+r107 | c5majiac | 2016-03-26 23:11:10 -0400 (Sat, 26 Mar 2016) | 1 line
+
+I have finished the last daily Scrum meetings
+------------------------------------------------------------------------
+r106 | c5songzh | 2016-03-26 23:10:59 -0400 (Sat, 26 Mar 2016) | 1 line
+
+added crcCars from last time
+------------------------------------------------------------------------
+r105 | c5majiac | 2016-03-26 23:08:56 -0400 (Sat, 26 Mar 2016) | 1 line
+
+
+------------------------------------------------------------------------
+r104 | c5muises | 2016-03-26 23:08:54 -0400 (Sat, 26 Mar 2016) | 1 line
+
+removed ExeHistory.java
+------------------------------------------------------------------------
+r103 | c5muises | 2016-03-26 23:05:16 -0400 (Sat, 26 Mar 2016) | 1 line
+
+adding my final scrum meeting file
+------------------------------------------------------------------------
+r102 | c5muises | 2016-03-26 23:00:31 -0400 (Sat, 26 Mar 2016) | 1 line
+
+removing sam and alie 2a extra folder
+------------------------------------------------------------------------
+r101 | c5muises | 2016-03-26 22:59:43 -0400 (Sat, 26 Mar 2016) | 1 line
+
+deleted mike and jackson 2a extra folders
+------------------------------------------------------------------------
+r100 | c4teachm | 2016-03-26 22:58:05 -0400 (Sat, 26 Mar 2016) | 1 line
+
+
+------------------------------------------------------------------------
+r99 | c4teachm | 2016-03-26 22:57:45 -0400 (Sat, 26 Mar 2016) | 1 line
+
+
+------------------------------------------------------------------------
+r97 | c4teachm | 2016-03-26 22:49:28 -0400 (Sat, 26 Mar 2016) | 1 line
+
+Formatting all command files except grep 
+------------------------------------------------------------------------
+r96 | c5songzh | 2016-03-26 21:48:44 -0400 (Sat, 26 Mar 2016) | 1 line
+
+Added Javadoc for every command class
+------------------------------------------------------------------------
+r95 | c5songzh | 2016-03-26 20:36:53 -0400 (Sat, 26 Mar 2016) | 1 line
+
+Changed description of the ls command
+------------------------------------------------------------------------
+r94 | c4teachm | 2016-03-26 19:47:11 -0400 (Sat, 26 Mar 2016) | 1 line
+
+Sprint 2 backlog 
+------------------------------------------------------------------------
+r93 | c4teachm | 2016-03-26 19:45:58 -0400 (Sat, 26 Mar 2016) | 1 line
+
+Moving backlog to correct folder 
+------------------------------------------------------------------------
+r92 | c4teachm | 2016-03-26 19:44:41 -0400 (Sat, 26 Mar 2016) | 2 lines
+
+
+Scrum meeting 
+------------------------------------------------------------------------
+r91 | c4teachm | 2016-03-26 19:43:51 -0400 (Sat, 26 Mar 2016) | 1 line
+
+Scrum meeting
+------------------------------------------------------------------------
+r90 | c4teachm | 2016-03-26 19:42:16 -0400 (Sat, 26 Mar 2016) | 2 lines
+
+Scrum meeting
+
+------------------------------------------------------------------------
+r89 | c5songzh | 2016-03-26 19:22:48 -0400 (Sat, 26 Mar 2016) | 1 line
+
+final revision ? porbably for this class
+------------------------------------------------------------------------
+r88 | c5songzh | 2016-03-26 19:22:30 -0400 (Sat, 26 Mar 2016) | 1 line
+
+fixed small issues
+------------------------------------------------------------------------
+r87 | c5songzh | 2016-03-26 19:22:15 -0400 (Sat, 26 Mar 2016) | 1 line
+
+Fixed bugs along the way
+------------------------------------------------------------------------
+r86 | c5songzh | 2016-03-26 19:22:00 -0400 (Sat, 26 Mar 2016) | 1 line
+
+Fixed bugs along the way
+------------------------------------------------------------------------
+r85 | c5songzh | 2016-03-26 19:21:39 -0400 (Sat, 26 Mar 2016) | 1 line
+
+Finished JUnite test cases for classes written by c5songzh
+------------------------------------------------------------------------
+r84 | c5songzh | 2016-03-26 18:11:14 -0400 (Sat, 26 Mar 2016) | 1 line
+
+Edited the isValid method for correct testing
+------------------------------------------------------------------------
+r83 | c5songzh | 2016-03-26 18:10:28 -0400 (Sat, 26 Mar 2016) | 1 line
+
+Added protect against copying to same location
+------------------------------------------------------------------------
+r82 | c5songzh | 2016-03-26 17:41:21 -0400 (Sat, 26 Mar 2016) | 1 line
+
+Fixed overwriting behavior of > using the exception throw from create file
+------------------------------------------------------------------------
+r81 | c5songzh | 2016-03-26 17:28:03 -0400 (Sat, 26 Mar 2016) | 1 line
+
+Replaced test cases
+------------------------------------------------------------------------
+r80 | c5songzh | 2016-03-26 17:22:42 -0400 (Sat, 26 Mar 2016) | 1 line
+
+avoided the possibility for copying multiple file with the same name multiple times
+------------------------------------------------------------------------
+r79 | c5songzh | 2016-03-26 16:53:26 -0400 (Sat, 26 Mar 2016) | 1 line
+
+Made the output to console better looking
+------------------------------------------------------------------------
+r78 | c5songzh | 2016-03-26 16:35:26 -0400 (Sat, 26 Mar 2016) | 1 line
+
+Fixed a typo
+------------------------------------------------------------------------
+r77 | c5songzh | 2016-03-26 16:34:26 -0400 (Sat, 26 Mar 2016) | 1 line
+
+Edited javadoc for Cat class
+------------------------------------------------------------------------
+r76 | c5songzh | 2016-03-26 16:34:03 -0400 (Sat, 26 Mar 2016) | 1 line
+
+Added CatTest 
+------------------------------------------------------------------------
+r75 | c5songzh | 2016-03-26 16:01:53 -0400 (Sat, 26 Mar 2016) | 1 line
+
+Fixed the program when file is created by abosolute path in root directory
+------------------------------------------------------------------------
+r74 | c5songzh | 2016-03-26 15:52:10 -0400 (Sat, 26 Mar 2016) | 1 line
+
+Corrected syntax error and working fine
+------------------------------------------------------------------------
+r73 | c5majiac | 2016-03-26 15:45:18 -0400 (Sat, 26 Mar 2016) | 1 line
+
+I have committed the recallhistoryTest
+------------------------------------------------------------------------
+r72 | c5majiac | 2016-03-26 15:44:57 -0400 (Sat, 26 Mar 2016) | 1 line
+
+I hava revised the recallhistory
+------------------------------------------------------------------------
+r71 | c5songzh | 2016-03-26 15:25:32 -0400 (Sat, 26 Mar 2016) | 1 line
+
+Added support for ! command in JShell
+------------------------------------------------------------------------
+r70 | c5majiac | 2016-03-26 12:35:58 -0400 (Sat, 26 Mar 2016) | 1 line
+
+i have revised the recallhistory class
+------------------------------------------------------------------------
+r69 | c5songzh | 2016-03-26 02:06:20 -0400 (Sat, 26 Mar 2016) | 1 line
+
+Rewrite the JShell for more readalbe and reliable code and allowed return for testing and redirecting
+------------------------------------------------------------------------
+r68 | c5songzh | 2016-03-26 02:05:39 -0400 (Sat, 26 Mar 2016) | 1 line
+
+Changed all the commands to fit the change in JShell for retun design. Sorrrrrrrrrrrrryyyyyyyyy  guys
+------------------------------------------------------------------------
+r67 | c5songzh | 2016-03-26 02:04:55 -0400 (Sat, 26 Mar 2016) | 1 line
+
+Added helper in File for ease to create file
+------------------------------------------------------------------------
+r66 | c5songzh | 2016-03-25 23:36:13 -0400 (Fri, 25 Mar 2016) | 1 line
+
+Changed to a design with returns
+------------------------------------------------------------------------
+r65 | c5majiac | 2016-03-25 10:41:29 -0400 (Fri, 25 Mar 2016) | 1 line
+
+I have finished the daily Scrum meeting.
+------------------------------------------------------------------------
+r64 | c5songzh | 2016-03-25 00:42:11 -0400 (Fri, 25 Mar 2016) | 1 line
+
+Well.....I dont know if it is correct yet, but will check back later
+------------------------------------------------------------------------
+r63 | c5songzh | 2016-03-25 00:38:25 -0400 (Fri, 25 Mar 2016) | 2 lines
+
+Deleted Debug lines for JShell
+
+------------------------------------------------------------------------
+r62 | c5songzh | 2016-03-25 00:37:45 -0400 (Fri, 25 Mar 2016) | 1 line
+
+Deleted the Debug lines of the code
+------------------------------------------------------------------------
+r61 | c5songzh | 2016-03-25 00:36:55 -0400 (Fri, 25 Mar 2016) | 1 line
+
+Fixed a bug found with params variable
+------------------------------------------------------------------------
+r60 | c5songzh | 2016-03-25 00:20:27 -0400 (Fri, 25 Mar 2016) | 1 line
+
+Added Debug functionality for now
+------------------------------------------------------------------------
+r59 | c5songzh | 2016-03-25 00:20:08 -0400 (Fri, 25 Mar 2016) | 2 lines
+
+Changed JShell to suit the RecallHistory Command
+
+------------------------------------------------------------------------
+r58 | c5majiac | 2016-03-24 23:40:50 -0400 (Thu, 24 Mar 2016) | 1 line
+
+I have revised the RecallHistory class
+------------------------------------------------------------------------
+r57 | c5majiac | 2016-03-24 23:38:39 -0400 (Thu, 24 Mar 2016) | 1 line
+
+I have finished the RecallHistory classs
+------------------------------------------------------------------------
+r56 | c5muises | 2016-03-24 22:49:44 -0400 (Thu, 24 Mar 2016) | 1 line
+
+added extra commenting
+------------------------------------------------------------------------
+r55 | c5muises | 2016-03-24 22:49:19 -0400 (Thu, 24 Mar 2016) | 1 line
+
+fixed one small bug with the indexing of the while loop
+------------------------------------------------------------------------
+r54 | c4teachm | 2016-03-24 22:34:04 -0400 (Thu, 24 Mar 2016) | 1 line
+
+Need to format printing 
+------------------------------------------------------------------------
+r53 | c4teachm | 2016-03-24 22:25:32 -0400 (Thu, 24 Mar 2016) | 1 line
+
+Fixed recursion
+------------------------------------------------------------------------
+r52 | c5muises | 2016-03-24 22:22:37 -0400 (Thu, 24 Mar 2016) | 1 line
+
+adding tests for get method
+------------------------------------------------------------------------
+r51 | c5muises | 2016-03-23 22:18:27 -0400 (Wed, 23 Mar 2016) | 1 line
+
+added javadocs to get, this should be entirely complete yet still have not tested for websites that do not exist empty files etc
+------------------------------------------------------------------------
+r50 | c4teachm | 2016-03-23 22:12:13 -0400 (Wed, 23 Mar 2016) | 1 line
+
+
+------------------------------------------------------------------------
+r49 | c5muises | 2016-03-23 22:02:59 -0400 (Wed, 23 Mar 2016) | 1 line
+
+get works!!!!!
+------------------------------------------------------------------------
+r48 | c4teachm | 2016-03-23 21:31:38 -0400 (Wed, 23 Mar 2016) | 1 line
+
+Added helper method "find" 
+------------------------------------------------------------------------
+r47 | c4teachm | 2016-03-23 21:26:21 -0400 (Wed, 23 Mar 2016) | 1 line
+
+IT WORKS
+------------------------------------------------------------------------
+r46 | c5muises | 2016-03-23 21:09:52 -0400 (Wed, 23 Mar 2016) | 1 line
+
+finished class, untested, testing now
+------------------------------------------------------------------------
+r45 | c5muises | 2016-03-23 20:55:06 -0400 (Wed, 23 Mar 2016) | 1 line
+
+added helper function for non recusive section, currently working on recusive helper function
+------------------------------------------------------------------------
+r44 | c5muises | 2016-03-23 18:13:48 -0400 (Wed, 23 Mar 2016) | 1 line
+
+current state of grep : need to add helper method to shorten code and allow for recursion
+------------------------------------------------------------------------
+r43 | c4teachm | 2016-03-23 18:13:41 -0400 (Wed, 23 Mar 2016) | 1 line
+
+Ls workinh without recursion
+------------------------------------------------------------------------
+r42 | c4teachm | 2016-03-23 18:07:36 -0400 (Wed, 23 Mar 2016) | 1 line
+
+Ls is working without recursion 
+------------------------------------------------------------------------
+r41 | c5muises | 2016-03-23 17:26:57 -0400 (Wed, 23 Mar 2016) | 1 line
+
+grep now extends command - forgot about that earlier!
+------------------------------------------------------------------------
+r40 | c5muises | 2016-03-23 17:19:16 -0400 (Wed, 23 Mar 2016) | 1 line
+
+non recursive functionality of grep added
+------------------------------------------------------------------------
+r39 | c4teachm | 2016-03-23 16:57:16 -0400 (Wed, 23 Mar 2016) | 1 line
+
+Working on Ls run 
+------------------------------------------------------------------------
+r38 | c5muises | 2016-03-23 16:38:08 -0400 (Wed, 23 Mar 2016) | 1 line
+
+imported the correct packages, still have the same error as before
+------------------------------------------------------------------------
+r37 | c5songzh | 2016-03-22 21:51:51 -0400 (Tue, 22 Mar 2016) | 1 line
+
+Meeting file for March 22nd
+------------------------------------------------------------------------
+r36 | c5songzh | 2016-03-22 21:48:01 -0400 (Tue, 22 Mar 2016) | 1 line
+
+Commited the file which was created on the 17th of march
+------------------------------------------------------------------------
+r35 | c5songzh | 2016-03-22 21:38:01 -0400 (Tue, 22 Mar 2016) | 1 line
+
+
+------------------------------------------------------------------------
+r34 | c5muises | 2016-03-22 16:57:32 -0400 (Tue, 22 Mar 2016) | 1 line
+
+adding mar20 scrum meeting file
+------------------------------------------------------------------------
+r33 | c5muises | 2016-03-22 16:53:55 -0400 (Tue, 22 Mar 2016) | 1 line
+
+adding mar 17 scrum meeting file
+------------------------------------------------------------------------
+r32 | c5majiac | 2016-03-21 20:31:24 -0400 (Mon, 21 Mar 2016) | 1 line
+
+I have committed the daily scrummeeting
+------------------------------------------------------------------------
+r31 | c5majiac | 2016-03-17 23:02:20 -0400 (Thu, 17 Mar 2016) | 1 line
+
+I have finished today's meeting
+------------------------------------------------------------------------
+r30 | c5muises | 2016-03-17 21:19:14 -0400 (Thu, 17 Mar 2016) | 1 line
+
+still unfinished, added the ability to add file to the file system with name and contents
+------------------------------------------------------------------------
+r29 | c5muises | 2016-03-17 20:44:49 -0400 (Thu, 17 Mar 2016) | 1 line
+
+added getFileName helper method, which will make it easier to create the new file in the FileSystem
+------------------------------------------------------------------------
+r28 | c5muises | 2016-03-17 20:23:22 -0400 (Thu, 17 Mar 2016) | 1 line
+
+Adding Get class
+------------------------------------------------------------------------
+r27 | c5songzh | 2016-03-16 22:52:50 -0400 (Wed, 16 Mar 2016) | 1 line
+
+Uploaded the test cases from A2A and need to resolve the issue with Junit
+------------------------------------------------------------------------
+r26 | c5songzh | 2016-03-16 22:48:23 -0400 (Wed, 16 Mar 2016) | 1 line
+
+Silenced the warning by taking out one unused variable
+------------------------------------------------------------------------
+r25 | c5songzh | 2016-03-16 22:47:12 -0400 (Wed, 16 Mar 2016) | 1 line
+
+Made change to Directory and Cd, finished implmentation of Cp and Mv
+------------------------------------------------------------------------
+r24 | c5songzh | 2016-03-16 22:46:38 -0400 (Wed, 16 Mar 2016) | 1 line
+
+Implemented mv command using the helper function from File and Directory
+------------------------------------------------------------------------
+r23 | c5songzh | 2016-03-16 22:23:31 -0400 (Wed, 16 Mar 2016) | 1 line
+
+Committed Zhancheng's A2 to the repo under src for testing 
+------------------------------------------------------------------------
+r22 | c5songzh | 2016-03-16 21:52:29 -0400 (Wed, 16 Mar 2016) | 1 line
+
+Added functionality of Cp
+------------------------------------------------------------------------
+r21 | c5majiac | 2016-03-15 21:19:54 -0400 (Tue, 15 Mar 2016) | 1 line
+
+I have committed the source for the 2A
+------------------------------------------------------------------------
+r20 | c5majiac | 2016-03-15 17:56:05 -0400 (Tue, 15 Mar 2016) | 1 line
+
+I have commited the meeting
+------------------------------------------------------------------------
+r19 | c4teachm | 2016-03-14 23:45:39 -0400 (Mon, 14 Mar 2016) | 1 line
+
+
+------------------------------------------------------------------------
+r18 | c5songzh | 2016-03-14 19:17:20 -0400 (Mon, 14 Mar 2016) | 1 line
+
+Commited meeting log after the meeting 
+------------------------------------------------------------------------
+r17 | c4teachm | 2016-03-14 19:14:28 -0400 (Mon, 14 Mar 2016) | 1 line
+
+Sprint 1 Backlog 
+------------------------------------------------------------------------
+r16 | c5songzh | 2016-03-14 19:09:26 -0400 (Mon, 14 Mar 2016) | 1 line
+
+Fixed the typing errors and added Cat functionality into the product backlog  
+------------------------------------------------------------------------
+r15 | c5songzh | 2016-03-14 18:48:38 -0400 (Mon, 14 Mar 2016) | 1 line
+
+moved the folder into assginment 2
+------------------------------------------------------------------------
+r13 | c4teachm | 2016-03-14 18:45:37 -0400 (Mon, 14 Mar 2016) | 1 line
+
+
+------------------------------------------------------------------------
+r12 | c4teachm | 2016-03-14 18:42:15 -0400 (Mon, 14 Mar 2016) | 1 line
+
+
+------------------------------------------------------------------------
+r11 | c5muises | 2016-03-14 18:37:31 -0400 (Mon, 14 Mar 2016) | 1 line
+
+adding my scrum meeting file for mar 14
+------------------------------------------------------------------------
+r9 | c4teachm | 2016-03-14 18:35:55 -0400 (Mon, 14 Mar 2016) | 1 line
+
+Committing our work from 2A 
+------------------------------------------------------------------------
+r8 | c5songzh | 2016-03-13 00:03:29 -0500 (Sun, 13 Mar 2016) | 1 line
+
+Added entries specific for Assignment 2B
+------------------------------------------------------------------------
+r7 | attarwal | 2016-02-14 11:12:26 -0500 (Sun, 14 Feb 2016) | 1 line
+
+Starter code by instructor
+------------------------------------------------------------------------
+r6 | attarwal | 2016-02-14 11:12:25 -0500 (Sun, 14 Feb 2016) | 1 line
+
+Starter code by instructor
+------------------------------------------------------------------------
+r5 | attarwal | 2016-02-14 11:12:24 -0500 (Sun, 14 Feb 2016) | 1 line
+
+Starter code by instructor
+------------------------------------------------------------------------
+r4 | attarwal | 2016-02-14 11:12:23 -0500 (Sun, 14 Feb 2016) | 1 line
+
+Starter code by instructor
+------------------------------------------------------------------------
+r3 | attarwal | 2016-02-14 11:12:22 -0500 (Sun, 14 Feb 2016) | 1 line
+
+Starter code by instructor
+------------------------------------------------------------------------
+r2 | attarwal | 2016-02-14 11:12:21 -0500 (Sun, 14 Feb 2016) | 1 line
+
+Starter code by instructor
+------------------------------------------------------------------------
+r1 | markus | 2016-02-14 10:02:55 -0500 (Sun, 14 Feb 2016) | 1 line
+
+
+------------------------------------------------------------------------
+
+
+
+Part 3) +++Work Distribution of Team Members+++
++++ON ALL SOURCE FILES+++
+   5 attarwal
+ 404 c4teachm
+ 204 c5majiac
+ 264 c5muises
+2186 c5songzh
++++ON CRC CARDS+++
+   9 attarwal
++++ON DAILYSCRUMMEETINGS+++
+  33 attarwal
+  78 c4teachm
+  46 c5majiac
+  36 c5muises
+  27 c5songzh
++++ON PRODUCT BACKLOG +++
+  11 attarwal
+  54 c5songzh
++++ON SPRINTS+++
+  68 attarwal
+  86 c4teachm
+45828
+Part 4) SVN Commits
+
+
+On Sprints
+   1  attarwal 
+   2  c4teachm 
+
+
+On CRC Cards
+   1  attarwal 
+   1  c4teachm 
+   1  c5songzh 
+
+
+On DailyScrumMeetings
+   1  attarwal 
+   7  c4teachm 
+   5  c5majiac 
+   4  c5muises 
+   3  c5songzh 
+
+
+On ProductBacklog
+   1  attarwal 
+   2  c5songzh 
+
+
+On source
+   1  attarwal 
+  15  c4teachm 
+   6  c5majiac 
+  20  c5muises 
+  43  c5songzh 

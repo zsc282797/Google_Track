@@ -1,0 +1,11 @@
+Class name: Ls
+Parent class (if any): Command
+Subclasses (if any): N/A
+
+Responsibilities:
+*Display the name of the directories and files inside a directory.
+*Print error message if target directory does not exist.
+
+Collaborators:
+*FileSystem
+*Directory

@@ -1,0 +1,12 @@
+a) What did I work on last time?
+	- Talked to Mike about an error in my code for get.
+	- Planned to meet up to discuss sprint 2 / what remaining functionality 
+		needs to be implemebnted / if any of the design needs to be changed.
+b) What do I plan to work on this time?
+	- Implement grep.
+	-Write unit tests for some of the classes.
+
+c) Am I currently blocked on anything?
+	-Still confused as to how to test get.
+
+

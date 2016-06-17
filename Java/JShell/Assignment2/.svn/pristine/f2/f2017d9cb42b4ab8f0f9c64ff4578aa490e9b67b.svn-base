@@ -1,0 +1,9 @@
+Class name: RecallHistory
+Parent class (if any): Command
+Subclasses (if any): N/A
+
+Responsibilities:
+*Recall commands from user input 
+
+Collaborators:
+*FileSystem

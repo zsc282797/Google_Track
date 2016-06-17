@@ -1,0 +1,7 @@
+a) What did I work on this time? 
+- Met with partners to discuss the structure of our A2A code and which code we were going to update for this assignment.
+- Posted folders with all of our previous code to the repository so we can look at each others code and understand it on our own time.
+- Assigned work to team members generally 
+-
+b) Am I currently blocked on anything?
+- NA

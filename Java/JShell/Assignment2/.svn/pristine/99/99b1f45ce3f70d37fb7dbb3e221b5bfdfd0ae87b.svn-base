@@ -1,0 +1,12 @@
+Class name: Cat
+Parent class (if any): Command
+Subclasses (if any): N/A
+
+Responsibilities:
+*Display contents of file(s).
+*Display error message if target is a directory or not found.
+
+Collaborators:
+*File
+*FileSystem
+*Directory

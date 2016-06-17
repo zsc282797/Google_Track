@@ -1,0 +1,11 @@
+Class name: Pushd
+Parent class (if any): Command
+Subclasses (if any): N/A
+
+Responsibilities:
+*Push current working directory on to directory stack.
+*Change to a new directory.
+
+Collaborators:
+*FileSystem
+*Cd

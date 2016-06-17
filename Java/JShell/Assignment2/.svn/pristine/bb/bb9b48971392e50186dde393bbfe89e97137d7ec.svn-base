@@ -1,0 +1,22 @@
+This version of CRC card Checklist is for the newest design
+
+----------------------------------
+CRC Card	Status	 
+----------------------------------
+Cat		Finished
+Cd		Finished
+CmdHistory	Finished
+Command 	Need Checking
+DirStack	Finished
+Directory	Finished
+Echo		Finished
+FileSystem	Finished
+File		Finished
+History		Finished
+JShell		Finished
+Ls		Finished
+Man		Finished
+Mkdir		Finished
+Popd		Finished
+Pushd		Finished
+Pwd		Finished

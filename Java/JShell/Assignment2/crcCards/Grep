@@ -1,0 +1,10 @@
+Class name: Grep
+Parent class (if any): Command
+Subclasses (if any): N/A
+
+Responsibilities:
+*Search files for a regex 
+
+Collaborators:
+* File 
+* FileSystem 

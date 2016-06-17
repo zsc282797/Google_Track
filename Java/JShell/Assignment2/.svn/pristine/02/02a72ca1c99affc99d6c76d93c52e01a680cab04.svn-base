@@ -1,0 +1,9 @@
+a) What did I work on last time?
+	- Researched how to implement the get command / how to make a connection with a URL.
+	- Implemented get with a try catch block for common errors.
+b) What do I plan to work on this time?
+	-start working on grep
+	- think about the overall design, how we are going to direct content into outfiles.
+
+c) Am I currently blocked on anything?
+	- Not sure how I should write JUnit or test in general for get.

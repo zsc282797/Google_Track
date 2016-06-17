@@ -1,0 +1,9 @@
+Class name: File
+Parent class (if any): Directory
+Subclasses (if any): N/A
+
+Responsibilities:
+*Store, set and get content.
+
+Collaborators:
+*N/A

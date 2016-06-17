@@ -1,0 +1,14 @@
+Class name: Echo
+Parent class (if any): Command
+Subclasses (if any): N/A
+
+Responsibilities:
+*Detect what to do based on the number of parameter(s) given.
+*Detect if a file already exist in the current directory. 
+*Depend on the situation, print string onto the shell, create a file with
+certain content, overwrite a file or append content into a file.
+
+Collaborators:
+*File
+*FileSystem
+*Directory
