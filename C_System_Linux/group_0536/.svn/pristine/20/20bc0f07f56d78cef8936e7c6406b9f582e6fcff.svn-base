@@ -1,0 +1,311 @@
+
+#ifndef PORT
+	#define PORT 57759
+#endif 
+#define MAX_NAME 128
+#define BUFFER_SIZE 128
+
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <time.h>
+#include <errno.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <sys/time.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <sys/signal.h>
+#include "utils.h"
+
+
+
+int client_count = 0; 
+static int listenfd;
+
+Client* cc_ptr = NULL; 
+Client* connected_client_head = NULL;
+
+char *greeting = "What is your user name?\n";
+char *welcome = "Welcome.\n";
+char *get_cmd = "Go ahead and enter user commands \n";
+//This is the head of the list
+
+//This is the global varaible 
+
+Client* add_client (int fd, struct in_addr sin_addr) {
+	struct client *c = malloc(sizeof(struct client));
+    if (!c) {
+	fprintf(stderr, "out of memory!\n");  /* highly unlikely to happen */
+	exit(1);
+    }
+    printf("Adding client %s\n", inet_ntoa(sin_addr));
+    fflush(stdout);
+    c->fd = fd;
+    c->ipaddr = sin_addr;
+    
+	// Spawn a new clinet struct
+
+    if(cc_ptr == NULL){
+    	cc_ptr = c; 
+    	connected_client_head = c;
+    }
+    else {
+		c->prev = cc_ptr;
+    	cc_ptr -> next = c;
+
+    	cc_ptr = cc_ptr->next;
+    }
+    return c;
+
+    
+}
+
+
+
+int setup (void) {
+	int on = 1;
+	struct sockaddr_in self;
+	
+	if ( (listenfd = socket (AF_INET, SOCK_STREAM, 0)) == -1 ){
+		perror("socket");
+		exit(1);
+	}
+	// Make sure we can reuse the port immediately after the server terminates
+	if (setsockopt (listenfd, SOL_SOCKET, SO_REUSEADDR , 
+		&on, sizeof(on)) == -1 ) {
+		perror("setsockopt -- SO_REUSEADDR");
+	}
+ 
+	memset(&self, '\0', sizeof(self)); //
+	self.sin_family = AF_INET;
+	self.sin_addr.s_addr = INADDR_ANY;
+	self.sin_port = htons(PORT);
+	printf("Listening on %d\n", PORT);
+
+	if (bind(listenfd, (struct sockaddr *) &self, sizeof(self)) == -1 ) {
+		perror("bind");
+		exit(1);
+	}
+	if (listen(listenfd, 5) == -1){
+		perror("listen");
+		exit(1);
+	}
+	return listenfd;
+}
+
+int find_network_newline (char *buf, int inbuf) { 
+	 int i;
+     for (i = 0; i < inbuf - 1; i++)
+         if ((buf[i] == '\r') && (buf[i + 1] == '\n'))
+           	return i;
+	return -1; 
+}
+
+static void broadcast(char *s, int size)
+{
+    struct client *p;
+    for (p = connected_client_head; p; p = p->next)
+	write(p->fd, s, size);
+	
+}
+
+
+/*void whatsup(Client* p){
+	int nbytes;
+	nbytes = read(p->fd, p->buf, sizeof(p->buf) ); 
+	printf("Read from clinet %s \n", p->buf);
+}*/
+void newconnection(QNode *root, Node* interests)  
+{	int retval;
+    int fd;
+    struct sockaddr_in r;
+    int nbytes = 0;
+    socklen_t socklen = sizeof(r);
+    //int len, i, c;
+    //char buf[BUFFER_SIZE];
+    int cmd_argc = 0;
+    char ** cmd_argv = malloc(sizeof (char*) * INPUT_ARG_MAX_NUM);
+    
+    for (int i = 0; i < INPUT_ARG_MAX_NUM; i++){
+    	cmd_argv[i] = malloc(sizeof (char) * MAX_LINE);
+    }
+
+    //int len;
+    if ((fd = accept(listenfd, (struct sockaddr *)&r, &socklen)) < 0) {
+	perror("accept");
+    } else {
+	printf("connection from %s\n", inet_ntoa(r.sin_addr));
+	Client* current_client = add_client(fd, r.sin_addr);
+	
+	broadcast(greeting,sizeof greeting - 1);
+
+
+	int c = -2; //This is the flag 
+
+	while(c==-2){ 
+		nbytes = write(current_client->fd, greeting, strlen(greeting));
+		nbytes = read(current_client->fd, current_client->name, MAX_NAME);
+	    	if ( strlen(current_client->name) > 0 ){
+	    		c = nbytes;
+	    	}
+	    	else { c = -2 ;}
+	    }
+		
+	//End of the name input while loop
+	nbytes = write(current_client->fd, welcome, strlen(welcome));
+	
+	
+	nbytes = write(current_client->fd, get_cmd, strlen(get_cmd));
+
+	while(1){
+		fd_set fdlist;
+		int maxfd = current_client->fd;
+		FD_ZERO(&fdlist);
+		FD_SET(current_client->fd, &fdlist);
+
+		if (select(maxfd+1, &fdlist, NULL, NULL, NULL ) < 1){
+			perror("select");
+		}
+	nbytes = read(current_client->fd,current_client->buf,sizeof current_client->buf -1);
+	cmd_argc = tokenize(current_client->buf, cmd_argv);
+	retval = process_args(cmd_argc, cmd_argv, &root, interests,
+		 current_client, connected_client_head);
+
+	}
+}
+
+}
+void whatsup(struct client *p)  /* select() said activity; check it out */
+{
+    char garbage[80];
+    int len = read(p->fd, garbage, sizeof garbage);
+    if (len > 0) {
+	/* discard (probably more of the "yes!!!!" string) */
+    } 
+    /*else if (len == 0) {
+	char buf[80];
+	printf("Disconnect from %s\n", inet_ntoa(p->ipaddr));
+	fflush(stdout);
+	sprintf(buf, "Goodbye %s\r\n", inet_ntoa(p->ipaddr));
+	removeclient(p->fd);
+	//broadcast(buf, strlen(buf));
+    } */
+    else {
+	/* shouldn't happen */
+	perror("read");
+    }
+}
+
+int main(int argc, char **argv) {
+	struct client *p;
+	//int c;
+	QNode *root = NULL;	
+	//char answer[MAX_LINE];	
+	//char name[MAX_LINE];
+	
+
+	Node * interests = NULL;
+
+	if (argc < 2) {
+        printf ("To run the program ./categorizer <name of input file>\n");
+        return 1;
+    }
+	
+    interests = get_list_from_file ( argv[1]);
+	
+    if (interests == NULL)
+        return 1;
+
+	root = add_next_level (root,  interests);
+	//free_list (interests);
+
+	//Same setup as A2 for all the nodes 
+	int listenfd;
+	//int fd;
+	//int nbytes;
+	//struct sockaddr_in r;
+	//socklen_t socklen;
+	//char buf[BUFFER_SIZE];
+	listenfd = setup();
+	
+	//Below is the server main loop
+	while (1) {
+		fd_set fdlist;
+		int maxfd = listenfd;
+		FD_ZERO(&fdlist);
+		FD_SET(listenfd, &fdlist);
+		for (p = connected_client_head; p; p = p->next) {
+	    FD_SET(p->fd, &fdlist);
+	    if (p->fd > maxfd)
+		maxfd = p->fd;
+		}
+		if (select(maxfd + 1, &fdlist, NULL, NULL, NULL) < 0) {
+	    perror("select");
+		} else {
+	    	for (p = connected_client_head; p; p = p->next){
+				if (FD_ISSET(p->fd, &fdlist))
+		    		{break;}
+	    	}
+		
+	    	if (p)
+				whatsup(p);  /* might remove p from list, so can't be in the loop */
+	    	if (FD_ISSET(listenfd, &fdlist))
+				newconnection(root, interests);
+			
+		}	
+
+
+	/*
+		socklen = sizeof(r);
+		if ( (fd = accept(listenfd, (struct sockaddr *)&r, &socklen)) < 0){
+			perror("accept");
+		} else {
+			printf("New connection on port %d\n", ntohs(r.sin_port));
+			Client * current_client;
+   			int cmd_argc;
+   			char **cmd_argv = malloc(sizeof(char*) * INPUT_ARG_MAX_NUM);
+   			for (int idx = 0; idx < INPUT_ARG_MAX_NUM;idx++ ){
+   				cmd_argv[idx] = malloc(sizeof(char) * BUFFER_SIZE);
+   			}
+
+			current_client = add_client (fd, r.sin_addr);
+			//read message from the user
+			nbytes = write(current_client->fd,gretting,strlen(gretting));
+			//prinnt the "What is your user name" to the user  	
+			if ((nbytes = read(current_client->fd, current_client -> buf, sizeof(buf)-1 )) > 0 && nbytes < 128){
+				strcpy(current_client -> name,current_client -> buf);
+				current_client -> name [nbytes] = '\0'; //Safety ending
+				current_client ->state = 1;
+				 //name is set 
+
+				if (current_client ->state == 1)
+				{
+				nbytes = write(current_client->fd,welcome,strlen(welcome));
+				nbytes = write(current_client->fd,get_cmd,strlen(get_cmd));
+				printf("Debug: User name is %s",current_client -> name );}
+				else { char* noname = "Please enter a name and try again!\n";
+				nbytes = write(current_client->fd,noname,strlen(noname));
+				close(current_client->fd); 
+				
+			}
+
+
+			}
+
+
+			while ((nbytes = read(fd, buf, sizeof(buf)-1 )) > 0) {
+				buf[nbytes] = '\0';
+				cmd_argc = tokenize(buf,cmd_argv);
+				
+				process_args(cmd_argc, cmd_argv, &root, interests, current_client, connected_client_head) ;
+				//printf("Next message: %s and has %d arguments \n", buf, cmd_argc);
+				//nbytes = write(fd, buf, strlen(buf));
+			}
+			close(fd);
+			free(interests);*/
+		return 0;
+		}
+	}

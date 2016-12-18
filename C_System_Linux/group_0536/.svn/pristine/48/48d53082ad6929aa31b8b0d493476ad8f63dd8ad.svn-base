@@ -1,0 +1,377 @@
+#ifndef PORT
+	#define PORT 57759
+#endif 
+#define MAX_NAME 128
+#define BUFFER_SIZE 128
+
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <time.h>
+#include <errno.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <sys/time.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <sys/signal.h>
+#include "utils.h"
+
+
+static int listenfd;
+int port = PORT;
+
+
+
+Client *top;
+Client *tail;
+//tail = top;
+
+int howmany = 1;  /* server counts as one person who knows the muffin man */
+
+int find_network_newline (char *buf, int inbuf);
+char* msg_greeting = "What is your user name? \r\n";
+char* msg_noname = "Please enter a valid name! \r\n";
+char* msg_getcmd = "Go ahead and enter user commands > \r\n";
+static Client* addclient(int fd, struct in_addr addr);
+static void removeclient(int fd);
+
+void whatsup(struct client *p, QNode* root, Node* interests);
+
+int main(int argc, char **argv)
+{	
+
+	tail = top;
+	
+	QNode *root = NULL;	
+	Node * interests = NULL;
+
+	if (argc < 2) {
+        printf ("To run the program ./categorizer <name of input file>\n");
+        return 1;
+    }
+	
+    interests = get_list_from_file ( argv[1]);
+	
+    if (interests == NULL)
+        return 1;
+
+	root = add_next_level (root,  interests);
+
+	//* abvoe are tree setup
+
+
+    //int c;
+    struct client *p;
+    extern void bindandlisten(), newconnection(), whatsup(struct client *p, QNode* root, Node* interests);
+
+   
+
+    bindandlisten();  /* aborts on error */
+    /*This function is copied and was modifed slightly*/
+    /* the only way the server exits is by being killed */
+    while (1) {
+	fd_set fdlist;
+	int maxfd = listenfd;
+	FD_ZERO(&fdlist);
+	FD_SET(listenfd, &fdlist);
+	for (p = top; p; p = p->next) {
+	    FD_SET(p->fd, &fdlist);
+	    if (p->fd > maxfd)
+		maxfd = p->fd;
+	}
+	if (select(maxfd + 1, &fdlist, NULL, NULL, NULL) < 0) {
+	    perror("select");
+	} else {
+	    for (p = top; p; p = p->next)
+		if (FD_ISSET(p->fd, &fdlist))
+		    break;
+		/*
+		 * it's not very likely that more than one client will drop at
+		 * once, so it's not a big loss that we process only one each
+		 * select(); we'll get it later...
+		 */
+	    if (p)
+		whatsup(p, root, interests);  /* might remove p from list, so can't be in the loop */
+	    if (FD_ISSET(listenfd, &fdlist))
+		newconnection(root, interests);
+	}
+    }
+    /*The server event loop was copied from the example code 
+    to allow mutiple user connecting to the same server*/
+    return(0);
+}
+
+
+void bindandlisten()  /* bind and listen, abort on error */
+{	/*This was almost the same as the example server
+	but added listening port*/
+    struct sockaddr_in r;
+
+    if ((listenfd = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
+	perror("socket");
+	exit(1);
+    }
+
+    memset(&r, '\0', sizeof r);
+    r.sin_family = AF_INET;
+    r.sin_addr.s_addr = INADDR_ANY;
+    r.sin_port = htons(port);
+    printf("Listening on %d\n", PORT);
+
+    if (bind(listenfd, (struct sockaddr *)&r, sizeof r)) {
+	perror("bind");
+	exit(1);
+    }
+
+    if (listen(listenfd, 5)) {
+	perror("listen");
+	exit(1);
+    }
+}
+
+
+void newconnection(QNode* root, Node* interests)  /* accept connection, sing to them, get response, update
+                       * linked list */
+{
+    int fd;
+    int nbytes;
+    struct sockaddr_in r;
+    socklen_t socklen = sizeof r;
+    //int len, i, c;
+    //int c;
+    //char buf[sizeof msg_greeting + 40];
+
+    //int where = -1;
+    int cmd_argc;
+    char** cmd_argv = malloc( sizeof (char*) * INPUT_ARG_MAX_NUM);
+    int retval;
+    for (int i = 0; i<=INPUT_ARG_MAX_NUM;i++){
+    	cmd_argv[i] = malloc( sizeof(char) * BUFFER_SIZE );
+    }
+
+
+    if ((fd = accept(listenfd, (struct sockaddr *)&r, &socklen)) < 0) {
+	perror("accept");
+    } else {
+	printf("connection from %s\n", inet_ntoa(r.sin_addr));
+	Client* current_client;
+	current_client = addclient(fd, r.sin_addr);
+
+	/*The addclient function was changed from the example as we need it
+	to return the newly added client as the current_client for later use */
+
+	nbytes = write(current_client->fd, msg_greeting, strlen (msg_greeting) );
+
+	/* Everythin below is collaboration from the team with some help form the 
+	example but most are orinigal work */
+	current_client->state = 0; //Set name is not read
+	while (current_client->state == 0){
+		nbytes = read(current_client->fd, current_client->name, sizeof current_client->name - 1);
+		if (strlen (current_client->name) > 0)
+			{current_client->state = 1;
+			current_client->name[nbytes-1] = '\0';
+			current_client->name[nbytes] = '\0';
+			break; } 
+			/*The name adding loop*/
+	}
+	sprintf(current_client->buf ,"Welcome. %s\r\n",current_client->name);
+	nbytes = write(current_client->fd,current_client->buf,strlen (current_client->buf)); 
+	nbytes = write(current_client->fd,msg_getcmd,strlen (msg_getcmd));
+
+	
+		fd_set fdlist;
+		int maxfd = current_client->fd;
+		FD_ZERO(&fdlist);
+		FD_SET(current_client->fd, &fdlist);
+
+		if (select(maxfd+1, &fdlist, NULL, NULL, NULL ) < 1){
+			perror("select");
+		}
+		
+		nbytes = read(current_client->fd,current_client->buf,strlen (current_client->buf));
+		
+		current_client->buf[nbytes] = '\0';	
+
+		if ( (where = find_network_newline ) > 0 ){
+				buf[where] = '\0';
+				buf[where+1] = '\0';
+			} 
+			
+		printf("Message got is %s\n",current_client->buf);
+
+
+
+		cmd_argc = tokenize(current_client->buf, cmd_argv);
+		retval = process_args(cmd_argc, cmd_argv, &root, interests, current_client, top) ;
+		if(retval == -1){
+			//disconect 
+			removeclient(current_client->fd);
+
+		}
+		if (retval ==0){
+			printf("Success runing \n");
+		}
+	
+    for (int i = 0; i<=INPUT_ARG_MAX_NUM;i++){
+    	free(cmd_argv[i]) ;
+    }
+    free(cmd_argv);
+
+	/* wait for and get response -- look for first non-whitespace char */
+	/* (buf is a good enough size for reads -- it probably will all fit
+	 * into one read() for any non-trivial size.) */
+	
+	}
+}
+
+
+void whatsup(struct client *p, QNode* root, Node* interests)  /* select() said activity; check it out */
+{		/*The idea of using the whatsup function to deal with fd activity is 
+		taken from the example but the implementation is original to fit our 
+		need for the mismatch server*/
+    	char temp[80];
+
+
+    	int cmd_argc;
+    	int nbytes;
+    	
+
+
+		
+		
+   		char** cmd_argv = malloc( sizeof (char*) * INPUT_ARG_MAX_NUM);
+    	int retval;
+    	for (int i = 0; i<=INPUT_ARG_MAX_NUM;i++){
+    		cmd_argv[i] = malloc( sizeof(char) * BUFFER_SIZE );
+    	}
+
+
+		
+		
+		nbytes = read(p->fd,p->buf,sizeof (p->buf));
+		
+		if (nbytes > 0)
+		{ 	p->buf[nbytes] = '\0';	
+
+			if ( (where = find_network_newline ) > 0 ){
+				buf[where] = '\0';
+				buf[where+1] = '\0';
+			} 
+			printf("Command got is %s\n",p->buf);
+			cmd_argc = tokenize(p->buf, cmd_argv);
+			retval = process_args(cmd_argc, cmd_argv, &root, interests, p, top);
+			if(retval == -1){
+				//disconect 
+				removeclient(p->fd);}
+			if (retval ==0){
+				printf("Success runing \n");
+			}
+		}
+		else if (nbytes == 0){
+			//being interrupted to exit
+			sprintf(temp,"Good Bye %s \r\n" ,p->name);
+			//broadcast(temp, strlen(temp));
+			removeclient(p->fd);
+
+		}
+		else {
+			perror("read");
+		}
+		for (int i = 0; i<=INPUT_ARG_MAX_NUM;i++){
+    	free(cmd_argv[i]) ;
+    	}
+    	free(cmd_argv);
+
+
+}
+
+
+static Client* addclient(int fd, struct in_addr addr)
+{	/*Slight modification to allow returning of the newly added user*/
+    struct client *p = malloc(sizeof(struct client));
+    if (!p) {
+	fprintf(stderr, "out of memory!\n");  /* highly unlikely to happen */
+	exit(1);
+    }
+    printf("Adding client %s\n", inet_ntoa(addr));
+    fflush(stdout);
+   	
+   	p->fd = fd;
+    p->ipaddr = addr;
+    
+    if (top == NULL){
+    	top = p;
+    	p->next = NULL;
+    	tail = p;
+    }
+  	else {
+  		tail->next = p;
+  		tail = tail->next;
+
+  	}
+
+
+    howmany++;
+    return p;
+}
+
+
+static void removeclient(int fd)
+{	
+    struct client *p;
+    struct client *found;
+    for (p = top; p; p = p->next)
+	{
+		if(p){
+			found = p;
+		}
+
+	}
+	if(found == NULL){
+		printf("No user to delete! \n");
+
+	}
+
+	else {
+		printf("Removing client %s\n", inet_ntoa(found->ipaddr));
+		fflush(stdout);
+		if (!found->prev && !found->next){
+			//The only connected  
+			top = NULL;
+			free(found);
+		}
+		else if (!found->prev) {
+		//the head 
+			top -> next = found->next;
+			free(found);
+		}
+		
+		else if (found->next) { //internal
+			found->prev->next = found->next;
+			free(found);
+		}
+		else if (!found->next) { //the tail
+			found->prev->next = NULL;
+			free(found);
+
+		}
+	
+}
+    
+	
+	howmany--;
+    
+}
+
+
+int find_network_newline (char *buf, int inbuf) { 
+	 /*Copied from the assginment guide*/
+	 int i;
+     for (i = 0; i < inbuf - 1; i++)
+         if ((buf[i] == '\r') && (buf[i + 1] == '\n'))
+           	return i;
+	return -1; 
+}
